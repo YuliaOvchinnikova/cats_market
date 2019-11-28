@@ -1,0 +1,122 @@
+/* плиточная вёрстка */
+.card {
+  display: inline-block;
+  vertical-align: top;
+  width: 300px;
+  height: 600px;
+  margin: 30px;
+  border: 2px solid rgb(191, 152, 110);
+  border-radius: 12px;  
+}
+
+.picture { 
+  width: 100%;
+  padding-top: 5px;
+}
+.name,
+.info {
+  margin-left: 10px;
+  height: 100px;  
+}
+
+
+/* списочная вёрстка */
+#type-list:checked + section .card {
+  display: block;
+  width: 1200px;
+  height: 250px;
+}
+
+#type-list:checked + section .picture,
+#type-list:checked + section .name,
+#type-list:checked + section .info {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
+#type-list:checked + section .picture{
+  width: 25%;
+  height: 100%;
+}
+
+img {
+    width: 100%;  
+}
+
+#type-list:checked + section img {
+  width: 100%;
+}
+
+img:hover {    
+  opacity: 0.7;
+}
+
+/*for name */
+div h2 a:hover {
+  color: red;
+}
+div h2{
+  white-space: nowrap;
+  width: 200px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#type-list::not(:checked) div h2{
+  margin-top: 0;  
+  padding-top: 0;
+}
+
+.category{
+  font-size: smaller;
+}
+/*for text*/
+div.info{
+  font: 15px arial, sans-serif;
+}
+
+.price{
+  color: rgb(186, 17, 17);
+  font: italic bold 18px sans-serif;
+  padding-top: 10px;
+}  
+
+/*for rating*/
+.hide {
+  display: none;
+}
+
+.rating {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+
+.rating > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating > label:hover,
+.rating > label:hover ~ label,
+.rating > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > input.radio-btn:checked ~ label:before,
+.rating > input.radio-btn:checked ~ label:before {
+    content: "\2605";
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+}
